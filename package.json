@@ -1,0 +1,38 @@
+{
+  "name": "yurt-alarm",
+  "version": "1.0.0",
+  "description": "Yurt WhatsApp gruplarındaki önemli duyuruları kaçırmamak için masaüstü bildirim aracı. Mesaj göndermez, sadece okur.",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "yurt-alarm": "index.js"
+  },
+  "files": [
+    "index.js",
+    "src/"
+  ],
+  "scripts": {
+    "start": "node --liftoff-only --max-semi-space-size=1 --max-old-space-size=64 index.js",
+    "deneme": "node index.js --deneme",
+    "test": "node --test test/detector.test.js",
+    "animasyon": "node index.js --animasyon"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "baileys": "7.0.0-rc14",
+    "qrcode": "^1.5.4",
+    "sharp": "npm:empty-npm-package@1.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardakie/HAYDAR-ALIYEVDE-NELER-OLUYOR.git"
+  },
+  "keywords": [
+    "whatsapp",
+    "bildirim",
+    "yurt"
+  ]
+}

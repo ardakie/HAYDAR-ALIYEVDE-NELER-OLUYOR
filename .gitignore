@@ -1,0 +1,5 @@
+node_modules/
+onizleme/
+*.log
+.DS_Store
+qr.png
