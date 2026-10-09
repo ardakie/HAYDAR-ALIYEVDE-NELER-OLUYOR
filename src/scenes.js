@@ -34,7 +34,7 @@ const GROUND = 23;
 const WIN_X = (k) => BX + 3 + k * 7;
 const FLOOR_Y = [21, 18, 15, 12, 9]; // zemin, 1, 2, 3, 4. kat
 const LIT = new Set(['1-0', '1-4', '2-6', '3-2', '3-7', '4-1', '4-5', '2-1', '1-8', '4-8', '0-1', '0-7']);
-export const ROOM_WIN = { floor: 3, k: 2 }; // 312
+export const ROOM_WIN = { floor: 3, k: 2 }; // 600
 
 function sky(cv, f) {
   for (let y = 0; y < GROUND; y++) cv.fill(0, y, W, 1, ' ', 15, y < 9 ? 17 : 18);
@@ -92,7 +92,7 @@ function building(cv, f, block, opts) {
     }
   });
 
-  // 312'den çıkan duman
+  // 600'den çıkan duman
   if (opts.smoke) {
     const sx = WIN_X(ROOM_WIN.k);
     const sy = FLOOR_Y[ROOM_WIN.floor];
@@ -158,7 +158,7 @@ export function exterior(cv, f, block, opts = {}) {
   }
 }
 
-// ---------- Sahne: oda 312 ----------
+// ---------- Sahne: oda 600 ----------
 
 export const R_FLOOR = 22;
 export const ROOM = { door: 3, bunk: 17, desk: 39, table: 66, window: 81 };
@@ -194,7 +194,7 @@ export function room(cv, f, block, s) {
     cv.put(dx + 1, 9, '┌────────┐\n│        │\n│        │\n│        │\n└────────┘', 130, 94);
     cv.put(dx + 1, 15, '┌────────┐\n│        │\n│        │\n│        │\n│        │\n└────────┘', 130, 94);
     cv.put(dx + 10, 15, '●', 220, 94);
-    cv.put(dx + 4, 10, '312', 16, 250);
+    cv.put(dx + 4, 10, '600', 16, 250);
     if (s.knock) cv.put(dx + 1, 5, f % 4 < 2 ? 'TAK! TAK! TAK!' : '  TAK!  TAK!  ', 160, wall);
   }
 
@@ -297,7 +297,7 @@ export function room(cv, f, block, s) {
   cv.fill(wx, 15, 15, 1, '▀', 252, wall); // denizlik
 }
 
-// ---------- Sahne: 312'nin penceresi dışarıdan (eşyalar düşüyor) ----------
+// ---------- Sahne: 600'ün penceresi dışarıdan (eşyalar düşüyor) ----------
 
 export function windowOutside(cv, f) {
   for (let y = 0; y < 20; y++) {
@@ -319,7 +319,7 @@ export function windowOutside(cv, f) {
   win(8, 3, false, false);
   win(42, 3, true, true);
   win(76, 3, false, false);
-  cv.put(46, 1, '312', 16, 250);
+  cv.put(46, 1, '600', 16, 250);
   // zemin: çimen + çalılar
   cv.fill(0, 20, W, 7, ' ', 15, 22);
   for (let x = 0; x < W; x++) cv.put(x, 20, (x * 7) % 5 ? '"' : ',', 34, 22);
